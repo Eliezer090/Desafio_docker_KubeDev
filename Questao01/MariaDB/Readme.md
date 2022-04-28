@@ -5,7 +5,7 @@
 
 ## MariaDB:
 ### Iniciando o container:
-- docker container run -d -p 3307:3306 -v mariadb_vol:/var/lib/mysql --name mariadb2 -e MARIADB_ROOT_PASSWORD=Demo123@ mariadb:latest
+- docker container run -d -p 3306:3306 -v mariadb_vol:/var/lib/mysql --name mariadb -e MARIADB_ROOT_PASSWORD=Demo123@ mariadb:latest
 ### Atachando ao mesmo:
 - docker exec -it NAME/CONTAINER ID mysql -uroot -pDemo123@
 
