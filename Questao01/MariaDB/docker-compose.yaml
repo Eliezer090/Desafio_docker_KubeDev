@@ -1,0 +1,17 @@
+version: '3.3'
+
+volumes:
+  mariadb_vol:
+
+services:
+  mariadb:
+    image: 'mariadb:${TAG}'
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: ${PASSWORD}
+    volumes:
+      - mariadb_vol:/var/lib/mysql
+    ports:
+      - '3306:3306'
+
+
