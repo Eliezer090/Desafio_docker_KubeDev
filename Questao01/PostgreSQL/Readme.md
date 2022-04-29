@@ -14,5 +14,5 @@
     CREATE DATABASE mytest;
     \l
 
-## Referencia:
+## Referência:
 - [Connecting to Postgresql in a docker container from outside](https://stackoverflow.com/questions/37694987/connecting-to-postgresql-in-a-docker-container-from-outside)

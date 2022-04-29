@@ -9,3 +9,5 @@
 ## Utilizando o docker-compose.yaml: 
     docker-compose --env-file ./.env up -d
 
+## Para testar:
+- Utilizado o programa "Robo 3T" pois é mais simples. 
