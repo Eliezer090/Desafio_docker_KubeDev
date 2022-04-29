@@ -3,10 +3,10 @@ version: '3.3'
 volumes:
   mongodb_vol:
     external: true
-    
+
 services:
   mongodb:
-    image: mongo:latest
+    image: mongo:${TAG}
     restart: always
     ports:
       - '27017:27017'
@@ -14,4 +14,4 @@ services:
       - 'mongodb_vol:/data/db'
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoadmin
-      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}

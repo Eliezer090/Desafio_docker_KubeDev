@@ -1,4 +1,4 @@
-# Criando volume, utilizado tanto para o Manual quanto para o yaml:
+# Criando volume, utilizado tanto para o manual quanto para o yaml:
 - docker volume create mongodb_vol
 
 # Iniciando banco MongoDB:
