@@ -1,0 +1,22 @@
+version: '3.3'
+
+volumes:
+  postegre_vol:
+    external: true
+
+services:
+  postgre:
+    image: postgres:${TAG}
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: ${PASSWORD}
+    volumes:
+      - 'postegre_vol:/var/lib/postgresql/data'
+
+  #adminer:
+  #  image: adminer
+  #  restart: always
+  #  ports:
+  #    - 8080:8080
