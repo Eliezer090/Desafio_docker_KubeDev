@@ -2,7 +2,8 @@ version: '3.3'
 
 volumes:
   mariadb_vol:
-
+    external: true
+    
 services:
   mariadb:
     image: 'mariadb:${TAG}'
