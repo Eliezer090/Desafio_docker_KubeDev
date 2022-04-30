@@ -1,0 +1,15 @@
+version: '3.3'
+
+volumes:
+  redis_vol:
+    external: true
+
+services:
+  redis:
+    image: redis:${TAG}
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_vol:/data'
+    command: redis-server --save 60 1
