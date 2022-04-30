@@ -8,5 +8,9 @@
 ## Com o docker-compose:
     docker-compose --env-file ./.env up -d
 
+# Para testar:
+- É preciso instalar o [Redis](https://redis.io/docs/getting-started/installation/install-redis-on-linux/), após instalado, verificar os [comandos](https://redis.io/commands/getset/) de SET e GET e suas extruturas para usar o banco. 
+
 # Links:
-[Docker-Redis](https://hub.docker.com/_/redis)
+[Docker hub - Redis](https://hub.docker.com/_/redis)
+
