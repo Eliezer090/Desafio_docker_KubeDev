@@ -8,10 +8,15 @@ services:
   mongodb:
     image: mongo:${TAG}
     restart: always
+    container_name: mongo
     ports:
       - '27017:27017'
     volumes:
       - 'mongodb_vol:/data/db'
+    networks:
+      default:
+        aliases:
+          - mongodb_network
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoadmin
       MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}
