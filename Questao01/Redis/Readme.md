@@ -1,6 +1,10 @@
 # Criando uma instancia Redis
-# Criando o Volume:
+# Criando:
+## Volume:
     docker volume create redis_vol
+## Network:
+    docker network create redis_nwk
+
 # Criando o container:
 ## Manual:
     docker run -d -p 6379:6379 -v redis_vol:/data --name redis redis:latest redis-server --save 60 1
