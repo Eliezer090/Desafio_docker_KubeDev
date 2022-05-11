@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    container_name: phpmyadmin
+    ports:
+      - '8080:80'
+    networks:
+      default:
+        aliases:
+          - mariadb_network
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mariadb

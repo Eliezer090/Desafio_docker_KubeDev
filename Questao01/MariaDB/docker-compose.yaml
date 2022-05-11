@@ -8,6 +8,11 @@ services:
   mariadb:
     image: 'mariadb:${TAG}'
     restart: always
+    container_name: mariadb
+    networks:
+      default:
+        aliases:
+          - mariadb_network
     environment:
       MARIADB_ROOT_PASSWORD: ${PASSWORD}
     volumes:
