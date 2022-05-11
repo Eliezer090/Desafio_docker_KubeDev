@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  mongo-express:
+    image: dpage/pgadmin4
+    restart: always
+    container_name: pgadmin
+    ports:
+      - 80:80
+    networks:
+      default:
+        aliases:
+          - postgresql_default
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: SuperSecret

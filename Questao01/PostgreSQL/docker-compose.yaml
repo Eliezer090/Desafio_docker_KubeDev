@@ -8,12 +8,17 @@ services:
   postgre:
     image: postgres:${TAG}
     restart: always
+    container_name: postgre
     ports:
       - '5432:5432'
     environment:
       POSTGRES_PASSWORD: ${PASSWORD}
     volumes:
       - 'postegre_vol:/var/lib/postgresql/data'
+    networks:
+      default:
+        aliases:
+          - postgre_network
 
   #adminer:
   #  image: adminer
