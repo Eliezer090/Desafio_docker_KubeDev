@@ -1,0 +1,20 @@
+version: '3.3'
+
+networks:
+  #Network do container do redis Questao01
+  redis_network:
+    external:
+      name: redis_nwk
+
+services:
+  mongo-express:
+    image: rediscommander/redis-commander:latest
+    restart: always
+    container_name: redis-commander
+    ports:
+      - 8085:8081
+    networks:
+      - redis_network
+    environment:
+      REDIS_HOSTS: local:redis:6379  
+
