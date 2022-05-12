@@ -1,5 +1,10 @@
 version: '3.3'
 
+networks:
+  mariadb_network:
+    external:
+      name: mariadb_network
+
 services:
   phpmyadmin:
     image: phpmyadmin
@@ -8,9 +13,7 @@ services:
     ports:
       - '8080:80'
     networks:
-      default:
-        aliases:
-          - mariadb_network
+      - mariadb_network
     environment:
       PMA_ARBITRARY: 1
       PMA_HOST: mariadb

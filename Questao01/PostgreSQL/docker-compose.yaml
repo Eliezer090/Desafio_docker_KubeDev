@@ -4,6 +4,11 @@ volumes:
   postegre_vol:
     external: true
 
+networks:
+  postgre_network:
+    external:
+      name: postgre_network
+
 services:
   postgre:
     image: postgres:${TAG}
@@ -16,9 +21,8 @@ services:
     volumes:
       - 'postegre_vol:/var/lib/postgresql/data'
     networks:
-      default:
-        aliases:
-          - postgre_network
+      - postgre_network
+
 
   #adminer:
   #  image: adminer

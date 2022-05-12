@@ -1,6 +1,9 @@
 # Criando volume, utilizado tanto para o processo manual quanto para o yaml:
     docker volume create mariadb_vol
 
+# Criando network:
+    docker network create mariadb_network
+
 # Criar container MariaDB 
 ## Manualmente:
 ### Iniciando o container:

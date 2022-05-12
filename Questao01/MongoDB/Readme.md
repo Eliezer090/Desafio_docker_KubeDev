@@ -1,5 +1,8 @@
 # Criando volume, utilizado tanto para o manual quanto para o yaml:
     docker volume create mongodb_vol
+    
+# Criando network:
+    docker network create mongodb_network
 
 # Iniciando banco MongoDB:
 ## Manualmente:

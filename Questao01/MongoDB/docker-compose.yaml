@@ -4,6 +4,11 @@ volumes:
   mongodb_vol:
     external: true
 
+networks:
+  mongodb_network:
+    external:
+      name: mongodb_network
+
 services:
   mongodb:
     image: mongo:${TAG}
@@ -14,9 +19,7 @@ services:
     volumes:
       - 'mongodb_vol:/data/db'
     networks:
-      default:
-        aliases:
-          - mongodb_network
+      - mongodb_network
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoadmin
       MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}

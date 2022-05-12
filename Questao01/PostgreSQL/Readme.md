@@ -1,6 +1,10 @@
 # Executando banco de dados Postegre
-# Criando volume:
+# Criando:
+## Volume:
     docker volume create postegre_vol
+## Network:
+    docker network create postgre_network
+
 # Criando o banco:
 ## Criando com linha de comando:
     docker run -d -p 5432:5432 -v postegre_vol:/var/lib/postgresql/data --name postgredb -e POSTGRES_PASSWORD=mysecretpassword postgres:latest

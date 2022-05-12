@@ -1,5 +1,10 @@
 version: '3.3'
 
+networks:
+  postgre_network:
+    external:
+      name: postgre_network
+
 services:
   mongo-express:
     image: dpage/pgadmin4
@@ -8,9 +13,7 @@ services:
     ports:
       - 80:80
     networks:
-      default:
-        aliases:
-          - postgresql_default
+      - postgre_network
     environment:
       PGADMIN_DEFAULT_EMAIL: user@domain.com
       PGADMIN_DEFAULT_PASSWORD: SuperSecret

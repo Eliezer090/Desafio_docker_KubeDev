@@ -3,16 +3,19 @@ version: '3.3'
 volumes:
   mariadb_vol:
     external: true
-    
+
+networks:
+  mariadb_network:
+    external:
+      name: mariadb_network
+
 services:
   mariadb:
     image: 'mariadb:${TAG}'
     restart: always
     container_name: mariadb
     networks:
-      default:
-        aliases:
-          - mariadb_network
+      - mariadb_network
     environment:
       MARIADB_ROOT_PASSWORD: ${PASSWORD}
     volumes:

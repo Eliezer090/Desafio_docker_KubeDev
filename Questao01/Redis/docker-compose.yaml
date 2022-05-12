@@ -5,6 +5,13 @@ volumes:
   redis_vol:
     external: true
 
+#Defininição das networks a serem usadas
+networks:
+  #Network do redis
+  redis_network:
+    external:
+      name: redis_nwk
+
 services:
   redis:
     image: redis:${TAG}
@@ -21,9 +28,3 @@ services:
       - 'redis_vol:/data'
     command: redis-server --save 60 1
 
-#Defininição das networks a serem usadas
-networks:
-  #Network do redis
-  redis_network:
-    external:
-      name: redis_nwk
