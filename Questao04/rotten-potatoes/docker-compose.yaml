@@ -6,7 +6,6 @@ volumes:
       name: mongo_vol
 
 networks:
-  #Network do container do redis Questao01
   application_network:
     external:
       name: application_network
