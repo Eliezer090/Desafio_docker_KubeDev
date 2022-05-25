@@ -23,7 +23,7 @@ services:
       - mongodb
     environment:
       MONGODB_DB: "admin"
-      MONGODB_HOST: "localhost"
+      MONGODB_HOST: "mongodb"
       MONGODB_PORT: "27017"
       MONGODB_USERNAME: mongodbuser
       MONGODB_PASSWORD: mongodbpwd
@@ -34,7 +34,7 @@ services:
     networks:
       - application_network
     volumes:
-      - mongo_vol:/data/db
+      - mongo_volume:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongodbuser
       MONGO_INITDB_ROOT_PASSWORD: mongodbpwd
