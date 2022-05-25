@@ -1,0 +1,45 @@
+version: '3.1'
+
+volumes:
+  wordpress_volume:
+    external:
+      name: wordpress_vol
+  mysql_volume:
+    external:
+      name: mysql_vol
+
+networks:
+  wordpress_network:
+    external:
+      name: wordpress_netw
+
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - wordpress_volume:/var/www/html
+    networks:
+      - wordpress_network
+    depends_on:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    networks:
+      - wordpress_network
+    environment:
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
