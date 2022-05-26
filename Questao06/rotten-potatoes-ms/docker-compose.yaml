@@ -15,6 +15,7 @@ services:
     networks:
       - rotten_potatoes_network
     environment:
+      #URL deve ser mudada de acordo com o seu cenário
       MOVIE_SERVICE_URI: http://143.198.176.57:8181
       REVIEW_SERVICE_URI: http://143.198.176.57:8282
       
