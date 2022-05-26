@@ -1,0 +1,22 @@
+version: '3.3'
+
+networks:
+  rotten_potatoes_network:
+    external:
+      name: rotten_potatoes_network
+
+services:
+  rotten-potatoes-ms:
+    image: eliezer123/rotten-potatoes-ms:v1
+    restart: always
+    container_name: rotten-potatoes-ms
+    ports:
+      - '80:5000'
+    networks:
+      - rotten_potatoes_network
+    environment:
+      MOVIE_SERVICE_URI: http://143.198.176.57:8181
+      REVIEW_SERVICE_URI: http://143.198.176.57:8282
+      
+
+
