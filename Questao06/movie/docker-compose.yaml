@@ -1,0 +1,37 @@
+version: '3.3'
+
+volumes:
+  mongodb_volume:
+    external:
+      name: mongodb_vol
+
+networks:
+  movie_network:
+    external:
+      name: movie_netw
+
+services:
+  movie:
+    image: eliezer123/movie:v1
+    restart: always
+    container_name: movie
+    ports:
+      - '8181:8181'
+    networks:
+      - movie_network
+    environment:
+      MONGODB_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/admin
+
+  mongodb:
+    image: mongo:latest
+    restart: always
+    container_name: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - 'mongodb_volume:/data/db'
+    networks:
+      - movie_network
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
