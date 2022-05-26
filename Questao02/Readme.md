@@ -1,0 +1,5 @@
+# Questão 02:
+- Certo, você conseguiu criar 4 bancos na sua máquina utilizando containers. Mas tem uma coisa, não adianta só conectar a aplicação no banco quando se está desenvolvendo, é preciso também acessar o banco, executar comandos e consultar a base. Então vamos fazer isso da forma KubeDev de ser, com containers !!! Cada banco de dados tem uma ferramenta administrativa com interface web que você pode usar.
+
+# Como executar:
+- Cada interface gráfica referente a cada banco está em sua referida pasta, mas para a interface conectar em um banco o mesmo precisa estar rodando, ou seja, a Questão 02 é um complementa da [Questão 01](https://github.com/Eliezer090/Desafio_docker_KubeDev/tree/main/Questao01), onde cada banco contém o seu docker-compose.yaml para subir, com isso precisa estar rodando o banco da [Questão 01](https://github.com/Eliezer090/Desafio_docker_KubeDev/tree/main/Questao01) para a interface da Questão 02 conseguir se conectar. 
